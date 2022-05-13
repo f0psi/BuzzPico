@@ -1,0 +1,31 @@
+from machine import Pin
+import utime
+
+
+blue = Pin(10, Pin.OUT)
+red = Pin(11, Pin.OUT)
+green = Pin(12, Pin.OUT)
+
+while True:
+    red.value(0)
+    green.value(0)
+    blue.value(0)
+    utime.sleep(2)
+    
+    print("Start")
+ 
+    red.value(1)
+    utime.sleep(2)
+    red.value(0)
+    
+    green.value(1)
+    utime.sleep(2)
+    green.value(0)
+    
+    blue.value(1)
+    utime.sleep(2)
+    blue.value(0)
+
+    
+    print("END!")
+    
