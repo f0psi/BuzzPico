@@ -1,4 +1,4 @@
 # BuzzPico
-Quiz-Buzzer using a Raspbery Pico, Emergency stop switch and a RGB LED Strip
+Quiz-Buzzer using a Raspbery Pico, Emergency stop switchs and a RGB LED Strip
 
 ![Circuit](circuit.png)

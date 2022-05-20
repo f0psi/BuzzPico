@@ -3,29 +3,33 @@ import utime
 
 
 blue = Pin(10, Pin.OUT)
-red = Pin(11, Pin.OUT)
-green = Pin(12, Pin.OUT)
+green = Pin(11, Pin.OUT)
+red = Pin(12, Pin.OUT)
+button1 = Pin(21, Pin.IN, Pin.PULL_DOWN)
+button2 = Pin(20, Pin.IN, Pin.PULL_DOWN)
 
-while True:
-    red.value(0)
-    green.value(0)
-    blue.value(0)
-    utime.sleep(2)
-    
-    print("Start")
- 
-    red.value(1)
-    utime.sleep(2)
-    red.value(0)
-    
-    green.value(1)
-    utime.sleep(2)
-    green.value(0)
-    
-    blue.value(1)
-    utime.sleep(2)
-    blue.value(0)
+red.value(0)
+green.value(0)
+blue.value(0)
+print("Setup done")
 
+
+while True:   
+    if not button1.value() & button1.value():
+        green.value(1)
+        
+        if button1.value():
+            green.value(0)
+            print("Button1!")
+            
+            blue.value(1)
+            utime.sleep(5)
+            blue.value(0)
     
-    print("END!")
-    
+        if button2.value():
+            green.value(0)
+            print("Button2!")
+            
+            red.value(1)
+            utime.sleep(5)
+            red.value(0)
